@@ -182,3 +182,81 @@ def domain_name(url):
 
 
 domain_name("https://github.com/carbonfive/raygun")
+
+
+def add_binary(a, b):
+    return f"{bin(a + b)}"[2:]
+
+
+add_binary(1, 1)
+
+
+def lovefunc(flower1, flower2):
+    if flower1 % 2 == 0 and flower2 % 2 == 1 or flower1 % 2 == 1 and flower2 % 2 == 0:
+        return True
+
+    return False
+
+
+lovefunc(1, 4)
+
+
+def tribonacci(signature, n):
+    while len(signature) < n:
+        signature.append(sum(signature[-3:]))
+
+    return signature[:n]
+
+
+tribonacci([1, 1], 10)
+
+
+def find_smallest_int(arr):
+    return min(arr)
+
+
+find_smallest_int([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0])
+
+
+def find_average(numbers):
+    return sum(numbers) / len(numbers)
+
+
+find_average([1, 2, 3, 5, 6])
+
+
+def fake_bin(x):
+    result = ""
+
+    for i in x:
+        if int(i) >= 5:
+            result += "1"
+        else:
+            result += "0"
+
+    return result
+
+
+fake_bin("800857237867")
+
+
+def disemvowel(string):
+    chartes = "aeiouAEIOU"
+
+    for char in chartes:
+        if char in string:
+            string = string.replace(char, "")
+
+    return string
+
+
+disemvowel("This website is for losers LOL!")
+
+
+def friend(x):
+    result = [elem for elem in x if len(elem) == 4]
+
+    return result
+
+
+friend(["Ryan", "Kieran", "Mark",])
