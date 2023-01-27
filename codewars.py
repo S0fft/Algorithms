@@ -260,3 +260,40 @@ def friend(x):
 
 
 friend(["Ryan", "Kieran", "Mark",])
+
+
+def set_alarm(employed, vacation):
+    if employed is True and vacation is True:
+        return False
+    elif employed is False and vacation is True:
+        return False
+    elif employed is False and vacation is False:
+        return False
+    else:
+        return True
+
+
+set_alarm(True, False)
+
+
+def find_uniq(arr):
+    max_elem = max(arr)
+    min_elem = min(arr)
+    arr.remove(max_elem)
+    arr.remove(min_elem)
+
+    for i in arr:
+        if i == max_elem:
+            return min_elem
+
+    return max_elem
+
+
+find_uniq([2, 2, 2, 2, 2, 1])
+
+
+def sum_array(a):
+    return sum(a)
+
+
+sum_array([1, 5.2, 4, 0, -1])
