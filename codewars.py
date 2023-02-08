@@ -297,3 +297,38 @@ def sum_array(a):
 
 
 sum_array([1, 5.2, 4, 0, -1])
+
+
+def descending_order(num):
+    num = [int(i) for i in list((str(num)))]
+    num.sort(reverse=True)
+    num = [str(i) for i in num]
+    num = "".join(num)
+
+    return int(num)
+
+
+descending_order(123456789)
+
+
+def make_upper_case(s):
+    return s.upper()
+
+
+make_upper_case("big")
+
+
+def find_short(s):
+    s = [len(i) for i in list(s.split(" "))]
+
+    return min(s)
+
+
+find_short("bitcoin take over the world maybe who knows perhaps")
+
+
+def feast(beast, dish):
+    return beast[-1] == dish[-1] and beast[0] == dish[0]
+
+
+feast("great blue heron", "garlic naan")
