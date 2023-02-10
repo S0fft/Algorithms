@@ -332,3 +332,64 @@ def feast(beast, dish):
 
 
 feast("great blue heron", "garlic naan")
+
+
+def better_than_average(class_points, your_points):
+    return sum(class_points) / len(class_points) < your_points
+
+
+better_than_average([5, 6, 7, 8, 9], 10)
+
+
+def abbrev_name(name):
+    name = name.split()
+
+    return f"{name[0][0].upper()}.{name[1][0].upper()}"
+
+
+abbrev_name("Sam Harris")
+
+
+def to_jaden_case(string):
+    string = [leter[0:1].upper() + leter[1:].lower() for leter in string.split()]
+    string = " ".join(string)
+
+    return string
+
+
+to_jaden_case("How can mirrors be real if our eyes aren't real")
+
+
+def minimum(arr):
+    return min(arr)
+
+
+minimum([1, 2, 3, 4, 5])
+
+
+def maximum(arr):
+    return max(arr)
+
+
+maximum([1, 2, 3, 4, 5])
+
+
+def greet(name):
+    return f"Hello, {name} how are you doing today?"
+
+
+greet("Jack")
+
+
+def no_space(x):
+    return x.replace(" ", "")
+
+
+no_space("Fixed Tests")
+
+
+def count_by(x, n):
+    return [i for i in range(x, n*x+1, x)]
+
+
+count_by(100, 5)
