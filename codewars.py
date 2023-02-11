@@ -1,3 +1,6 @@
+import math
+
+
 def maskify(cc):
     if cc == "":
         return ""
@@ -15,17 +18,6 @@ maskify("64607935616")
 
 
 def remove_every_other(my_list):
-    result = []
-
-    for index in range(0, len(my_list), 2):
-        result.append(my_list[index])
-    return result
-
-
-remove_every_other(["Keep", "Remove", "Keep", "Remove", "Keep", "Remove", "Keep"])
-
-
-def remove_every_other(my_list):
     return my_list[::2]
 
 
@@ -39,29 +31,6 @@ def sum_array(arr):
 
 
 sum_array([1, 2, 3, 4, 5, 6, 7])
-
-
-def task(a, b):
-
-    if a == b:
-        return "{0} ({1} since both are same)".format(a, a)
-    elif a < b:
-        number = 0
-        string = ""
-        for i in range(a, b+1):
-            number += i
-            string += str(i) + " + "
-        return "{0} ({1}= {2})".format(number, string[:-2], number)
-    else:
-        number = 0
-        string = ""
-        for i in range(b, a+1):
-            number += i
-            string += str(i) + " + "
-        return "{0} ({1}= {2})".format(number, string[:-2], number)
-
-
-task(1, 2)
 
 
 # -----------------------------------------------------------------------
@@ -393,3 +362,82 @@ def count_by(x, n):
 
 
 count_by(100, 5)
+
+
+def century(year):
+    return math.ceil(year / 100)
+
+
+century(1901)
+
+
+def points(games):
+    result = 0
+
+    for s in games:
+        s = list(s)
+        del s[1]
+        s = [int(i) for i in s]
+        if s[0] > s[1]:
+            result += 3
+        elif s[0] == s[1]:
+            result += 1
+
+    return result
+
+
+points(['1:1', '2:2', '3:3', '4:4', '2:2', '3:3', '4:4', '3:3', '4:4', '4:4'])
+
+
+def litres(time):
+    return math.floor(time * 0.5)
+
+
+litres(3)
+
+
+def get_grade(s1, s2, s3):
+    if 90 <= (s1 + s2 + s3) / 3 <= 100:
+        return "A"
+
+    if 80 <= (s1 + s2 + s3) / 3 < 90:
+        return "B"
+
+    if 70 <= (s1 + s2 + s3) / 3 < 80:
+        return "C"
+
+    if 60 <= (s1 + s2 + s3) / 3 < 70:
+        return "D"
+
+    return "F"
+
+
+get_grade(90, 100, 95)
+
+
+def check(seq, elem):
+    return True if elem in seq else False
+
+
+check([1, 2, 3, 4, 5], 3)
+
+
+def count_sheeps(sheep):
+    return sheep.count(True)
+
+
+count_sheeps([True, True, True])
+
+
+def zero_fuel(distance_to_pump, mpg, fuel_left):
+    return distance_to_pump <= mpg * fuel_left
+
+
+zero_fuel(100, 50, 1)
+
+
+def square_sum(numbers):
+    return sum([i**2 for i in numbers])
+
+
+square_sum([1, 2])
