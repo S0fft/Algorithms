@@ -441,3 +441,53 @@ def square_sum(numbers):
 
 
 square_sum([1, 2])
+
+
+def square_digits(num):
+    num = [str(int(i)**2) for i in list(str(num))]
+
+    return int("".join(num))
+
+
+square_digits(9119)
+
+
+def filter_list(l):
+    new = []
+
+    for i in l:
+        if type(i) is int:
+            new.append(i)
+
+    return new
+
+
+filter_list([1, 2, 'a', 'b'])
+
+
+def get_sum(a, b):
+    if a > b:
+        return sum(list(range(b, a+1)))
+    elif a == b:
+        return a
+
+    return sum(list(range(a, b+1)))
+
+
+get_sum(22, 1)
+
+
+def duplicate_count(text):
+    dup_list = []
+    lst = []
+
+    for x in text.lower():
+        if x not in lst:
+            lst.append(x)
+        else:
+            dup_list.append(x)
+
+    return len(set(dup_list))
+
+
+duplicate_count("Indivisibilities")
