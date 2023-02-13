@@ -1,3 +1,4 @@
+import re
 import math
 
 
@@ -491,3 +492,37 @@ def duplicate_count(text):
 
 
 duplicate_count("Indivisibilities")
+
+
+def duplicate_encode(word):
+    new_str = ""
+    word = word.lower()
+
+    for i in word.lower():
+        if word.count(i) > 1:
+            new_str += ")"
+        else:
+            new_str += "("
+
+    return new_str
+
+
+duplicate_encode("Success")
+
+
+def check_password(pasw):
+    pasw = list(pasw)
+    points_list = []
+
+    if len(pasw) >= 6:
+        points_list.append(True)
+        for i in pasw:
+            if i.isupper():
+                points_list.append(True)
+                if i.islower():
+                    points_list.append(True)
+
+    return len(points_list) == 3 and any(i.isdigit() for i in pasw) and "".join(pasw).isalnum()
+
+
+check_password('fjd3IR9dd')
