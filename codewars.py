@@ -498,7 +498,7 @@ def duplicate_encode(word):
     new_str = ""
     word = word.lower()
 
-    for i in word.lower():
+    for i in word:
         if word.count(i) > 1:
             new_str += ")"
         else:
@@ -526,3 +526,22 @@ def check_password(pasw):
 
 
 check_password('fjd3IR9dd')
+
+
+def tower_builder(n_floors):
+    lst = []
+    spaces = ""
+
+    for n in range(1, n_floors*2, 2)[::-1]:
+        lst.append(spaces + "*" * n)
+        spaces += " "
+
+    lst.reverse()
+
+    for e in lst:
+        print(e)
+
+    return lst
+
+
+tower_builder(30)
