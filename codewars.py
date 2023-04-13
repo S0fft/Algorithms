@@ -1,4 +1,3 @@
-import re
 import math
 
 
@@ -539,9 +538,30 @@ def tower_builder(n_floors):
     lst.reverse()
 
     for e in lst:
-        print(e)
+        # print(e)
+        pass
 
     return lst
 
 
-tower_builder(30)
+print(tower_builder(6))
+
+
+def cakes(recipe, available):
+    count = []
+
+    if len(available) < len(recipe):
+        return 0
+
+    for recipe_key, recipe_value in recipe.items():
+        for available_key, available_value in available.items():
+            if recipe_key == available_key:
+                if available_value >= recipe_value:
+                    if math.floor(available_value / recipe_value) >= 1:
+                        count.append(math.floor(available_value / recipe_value))
+
+    return min(count)
+
+
+# print(cakes({"flour": 500, "sugar": 200, "eggs": 1}, {"flour": 1200, "sugar": 1200, "eggs": 5, "milk": 200}))
+# print(cakes({"apples": 3, "flour": 300, "sugar": 150, "milk": 100, "oil": 100}, {"sugar": 500, "flour": 2000, "milk": 2000}))
